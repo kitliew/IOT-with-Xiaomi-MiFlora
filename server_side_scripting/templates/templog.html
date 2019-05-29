@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+}
+
+td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+}
+
+tr:nth-child(even) {
+        background-color: #dddddd;
+}
+</style>
+
+
+<head>
+        <meta charset="UTF-8">
+        <title>Temperature Records</title>
+</head>
+
+<body>
+<table id="templog" style="width:100%">
+        {% if result %}
+	<tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Temperature</th>
+	</tr>
+        {%for item in result%}
+	<tr>
+                <td> {{item[0]}}</td>
+                <td> {{item[1]}}</td>
+                <td> {{item[2]}}</td>
+        </tr>
+	{% endfor %}
+	{% endif %}
+</table>
+</body>
+</html>
